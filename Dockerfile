@@ -20,6 +20,11 @@ ADD files/init.sql /
 ADD files/ldapauth.js /
 ADD files/fixed.js /
 
+RUN sed -i '1a default-character-set=utf8\ncharacter_set_server=utf8' /etc/my.cnf \
+    && echo -e "default-character-set=utf8\n\n\
+[client]\ndefault-character-set=utf8\n\n\
+[mysql.server]\ndefault-character-set=utf8" >> /etc/my.cnf
+
 RUN source /root/.bash_profile \
     && curl https://raw.githubusercontent.com/creationix/nvm/v0.13.1/install.sh | bash \
     && source /root/.bash_profile \

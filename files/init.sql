@@ -1,6 +1,6 @@
-create database users;
+CREATE DATABASE users DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 
-use users;
+USE users;
 
 DROP TABLE IF EXISTS `users`;
 
@@ -13,4 +13,4 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`user`, `pwd`) VALUES ('admin', md5('admin'));
 
-create database iconfont;
+CREATE DATABASE iconfont DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
