@@ -1,0 +1,36 @@
+#!/bin/bash
+
+. /etc/rc.d/init.d/functions
+
+service mysqld restart
+
+prog="yicon"
+
+source /root/.bash_profile
+
+checkprocess()
+{
+    chkret=`pm2 ls | grep $prog | grep online | wc -l`
+    return $chkret
+}
+
+start()
+{
+    cd /yicon/src/
+    pm2 start yicon.sh
+    echo "Service $prog started!"
+}
+
+while [ true ]
+do
+    checkprocess
+    if [[ $chkret -eq "0" ]]
+    then
+        start
+    else
+        echo "Service $prog is running."
+    fi
+    sleep 60
+done
+
+exit 0

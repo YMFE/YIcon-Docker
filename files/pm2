@@ -1,0 +1,5 @@
+#!/bin/bash
+
+source /root/.bash_profile;
+
+/root/.nvm/current/lib/node_modules/pm2/bin/pm2 $*
