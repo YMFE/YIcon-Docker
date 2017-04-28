@@ -9,11 +9,13 @@ YIcon Docker 镜像
 ## 使用方式
 
 ```bash
+# 下载镜像
 docker pull registry.cn-qingdao.aliyuncs.com/ymfe/yicon:latest
+# 创建容器
 docker run -idt -p 3000:3000 --name yicon registry.cn-qingdao.aliyuncs.com/ymfe/yicon
 ```
 
-稍等大概 15s，本地浏览器访问 `127.0.0.1:3000` 即可。（Windows 用户请将 127.0.0.1 改为虚拟机地址）
+执行 `docker run` 命令后，稍等大概 15s，本地浏览器访问 `127.0.0.1:3000` 即可。（Windows 用户请将 127.0.0.1 改为虚拟机地址）
 
 管理员登录帐号为 `admin`，密码为 `admin`。
 
