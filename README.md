@@ -13,6 +13,7 @@ docker run -idt -p 3000:3000 --name yicon registry.cn-qingdao.aliyuncs.com/ymfe/
 
 管理员登录帐号为 `admin`，密码为 `admin`。
 
+
 ## 包含
 
 * YIcon 0.1.2.1
@@ -56,8 +57,6 @@ Docker 在本地使用，安装并不困难，只需要下载安装包，根据�
 Docker 官网：<http://www.docker.com/>
 
 国内下载地址：<http://get.daocloud.io/#install-docker-for-mac-windows>
-
-内网下载地址：[Mac](https://owncloud.corp.qunar.com/public.php?service=files&t=3737859b937f7ec78b593e4518d2876e) | [Windows pre 10](https://owncloud.corp.qunar.com/public.php?service=files&t=1d0d9b8d9e158e52610c7a5f78247d91) | [Windows 10](https://owncloud.corp.qunar.com/public.php?service=files&t=6fda123935a0f39885a765b7958fb676)
 
 ## 开发者
 
