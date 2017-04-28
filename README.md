@@ -15,8 +15,8 @@ docker run -idt -p 3000:3000 --name yicon registry.cn-qingdao.aliyuncs.com/ymfe/
 
 ## 包含
 
-* yicon 0.1.2.1
-* mysql
+* YIcon 0.1.2.1
+* MySQL
 * 简单的用户系统
 
 ## 维护Tips
