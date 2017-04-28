@@ -46,7 +46,7 @@ docker run -idt -p 3000:3000 --name yicon registry.cn-qingdao.aliyuncs.com/ymfe/
 当然，也可以直接从容器外执行:
 
 ```bash
-docker exec -it yicon_test bash -c "./user edwon.lim 123456"
+docker exec -it yicon bash -c "./user edwon.lim 123456"
 ```
 
 ## 开发者
