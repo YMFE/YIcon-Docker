@@ -22,7 +22,7 @@ docker run -idt -p 3000:3000 --name yicon registry.cn-qingdao.aliyuncs.com/ymfe/
 
 ## 包含
 
-* YIcon 0.1.2.1
+* YIcon 1.0.2.1
 * MySQL
 * 简单的用户系统
 
@@ -31,6 +31,7 @@ docker run -idt -p 3000:3000 --name yicon registry.cn-qingdao.aliyuncs.com/ymfe/
 * 部署路径: `/yicon`
 * 配置文件: `/yicon/config.json`
 * 源码目录: `/yicon/src/`
+* 管理 Docker 容器: `docker restart ycion` (`start` | `stop`)
 * 管理 Yicon 服务: `pm2 restart yicon` (`start` | `stop`)
 * 管理 MySQL 服务: `service mysqld restart` (`start` | `stop`)
 
