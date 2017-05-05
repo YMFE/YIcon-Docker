@@ -9,13 +9,19 @@ PATH=$PATH:/root/.nvm/current/bin \
 export PATH \
 " >> /root/.bash_profile
 
-RUN yum -y install git gcc-c++.x86_64 vim bzip2
+RUN yum -y install git gcc-c++.x86_64 vim bzip2 fontconfig
 RUN yum -y install mysql-server mysql mysql-devel
 
 ADD files/yicond /etc/rc.d/init.d/
 RUN chmod 777 /etc/rc.d/init.d/yicond
 ADD files/pm2 /usr/bin
 RUN chmod 777 /usr/bin/pm2
+ADD files/node /usr/bin
+RUN chmod 777 /usr/bin/node
+ADD files/npm /usr/bin
+RUN chmod 777 /usr/bin/npm
+ADD files/yicon /usr/bin
+RUN chmod 777 /usr/bin/yicon
 ADD files/init.sql /
 ADD files/ldapauth.js /
 ADD files/fixed.js /

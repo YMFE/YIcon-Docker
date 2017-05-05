@@ -22,7 +22,7 @@ docker run -idt -p 3000:3000 --name yicon registry.cn-qingdao.aliyuncs.com/ymfe/
 
 ## 包含
 
-* YIcon 1.0.2.1
+* YIcon
 * MySQL
 * 简单的用户系统
 
@@ -31,7 +31,6 @@ docker run -idt -p 3000:3000 --name yicon registry.cn-qingdao.aliyuncs.com/ymfe/
 * 部署路径: `/yicon`
 * 配置文件: `/yicon/config.json`
 * 源码目录: `/yicon/src/`
-* 管理 Docker 容器: `docker restart ycion` (`start` | `stop`)
 * 管理 Yicon 服务: `pm2 restart yicon` (`start` | `stop`)
 * 管理 MySQL 服务: `service mysqld restart` (`start` | `stop`)
 
@@ -57,13 +56,20 @@ docker run -idt -p 3000:3000 --name yicon registry.cn-qingdao.aliyuncs.com/ymfe/
 docker exec -it yicon bash -c "./user edwon.lim 123456"
 ```
 
-### Docker 安装
+## Docker 安装
 
 Docker 在本地使用，安装并不困难，只需要下载安装包，根据提示安装即可。
 
 Docker 官网：<http://www.docker.com/>
 
 国内下载地址：<http://get.daocloud.io/#install-docker-for-mac-windows>
+
+## FAQ
+
+* 关于 Yicon 的配置：直接修改 /yicon/config.json 后，重启 yicon 服务即可。
+* 关于 Yicon 的升级：请使用 `yicon update`。
+
+具体文档请见：[http://yicon.ymfe.tech/build.html](http://yicon.ymfe.tech/build.html)
 
 ## 开发者
 

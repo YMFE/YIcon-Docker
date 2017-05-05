@@ -1,0 +1,5 @@
+#!/bin/bash
+
+source /root/.bash_profile;
+
+/root/.nvm/current/bin/node $*
