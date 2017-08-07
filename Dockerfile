@@ -34,10 +34,10 @@ RUN sed -i '1a default-character-set=utf8\ncharacter_set_server=utf8' /etc/my.cn
 RUN source /root/.bash_profile \
     && curl https://raw.githubusercontent.com/creationix/nvm/v0.13.1/install.sh | bash \
     && source /root/.bash_profile \
-    && nvm install v4.2.4 \
+    && nvm install v6.2.1 \
     && npm install npm@3.10.5 -g --registry=https://registry.npm.taobao.org \
     && npm install pm2 -g --registry=https://registry.npm.taobao.org \
-    && npm install yicon-builder@1.0.4-beta3 -g --registry=https://registry.npm.taobao.org
+    && npm install yicon-builder@1.0.5 -g --registry=https://registry.npm.taobao.org
 
 RUN service mysqld restart \
     && /usr/bin/mysqladmin -u root password "123456" \
@@ -49,7 +49,7 @@ RUN service mysqld restart \
 RUN source /root/.bash_profile \
     && mkdir yicon \
     && cd yicon \
-    && yicon init --default \
+    && yicon init -b v1.1.2 --default \
     && cp src/start.sh src/yicon.sh \
     && mv src/src/controller/modules/ldapauth.js src/src/controller/modules/ldapauth.bak.js \
     && mv /ldapauth.js src/src/controller/modules/ldapauth.js \
