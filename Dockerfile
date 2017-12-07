@@ -23,6 +23,7 @@ RUN chmod 777 /usr/bin/npm
 ADD files/yicon /usr/bin
 RUN chmod 777 /usr/bin/yicon
 ADD files/init.sql /
+ADD files/iconfont.sql /
 ADD files/ldapauth.js /
 ADD files/fixed.js /
 
@@ -37,19 +38,20 @@ RUN source /root/.bash_profile \
     && nvm install v6.2.1 \
     && npm install npm@3.10.5 -g --registry=https://registry.npm.taobao.org \
     && npm install pm2 -g --registry=https://registry.npm.taobao.org \
-    && npm install yicon-builder@1.0.5 -g --registry=https://registry.npm.taobao.org
+    && npm install yicon-builder@1.0.6 -g --registry=https://registry.npm.taobao.org
 
 RUN service mysqld restart \
     && /usr/bin/mysqladmin -u root password "123456" \
     && mysql -u root -p123456 < init.sql \
-    && sed -i '1i\use iconfont;\n' /root/.nvm/current/lib/node_modules/yicon-builder/template/iconfont.sql \
-    && mysql -u root -p123456 < /root/.nvm/current/lib/node_modules/yicon-builder/template/iconfont.sql \
-    && rm init.sql
+    && sed -i '1i\use iconfont;\n' iconfont.sql \
+    && mysql -u root -p123456 < iconfont.sql \
+    && rm init.sql \
+    && rm iconfont.sql
 
 RUN source /root/.bash_profile \
     && mkdir yicon \
     && cd yicon \
-    && yicon init -b v1.1.2 --default \
+    && yicon init -b v1.2.1 --default \
     && cp src/start.sh src/yicon.sh \
     && mv src/src/controller/modules/ldapauth.js src/src/controller/modules/ldapauth.bak.js \
     && mv /ldapauth.js src/src/controller/modules/ldapauth.js \
